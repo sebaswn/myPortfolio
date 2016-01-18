@@ -1,6 +1,13 @@
 class PicturesController < ApplicationController
   before_action :set_picture, only: [:show, :edit, :update, :destroy]
 
+
+
+  def getPicInfo
+    chosenPost = Picture.find(params[:id])
+    render json: chosenPost
+  end
+  
   # GET /pictures
   # GET /pictures.json
   def index

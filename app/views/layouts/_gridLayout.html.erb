@@ -1,0 +1,228 @@
+<div id="myContent"> 
+  <% posts.each do |post| %> 
+    <div data-id="<%=post.id%>" class="active">
+      <img data-id="<%=post.id%>" src="<%=post.picURL%>">
+      
+        <div class="title"><h3><%=post.name%></h3>
+        </div>
+        <div class="picLocation">
+          <a class="linkToUser" ><h4><%= post.location %></h4></a>
+        </div>
+               
+        <div class="links">
+          
+          <a class="linkOptions showPic" data-post="<%=post.id%>" data-toggle="modal" data-target="#myModal" href="#">Show</a>
+          
+        </div>
+    </div>
+  <% end %>
+  </div> 
+
+
+
+
+<script>
+
+  $(".title").hide();
+  $(".picLocation").hide();
+  $(".links").hide();
+
+
+  $(".linkOptions").css("color", "white");
+  $(".buttonOptions").css("color", "white");
+
+  $(".linkToUser").css("color", "white");
+
+$(".active").mouseover(function(){
+  console.log("hello");
+  
+  $(this).children(".likeDiv").show();
+  
+  $(this).children(".title").show();
+  $(this).children(".picLocation").show();
+  $(this).children(".links").show();
+  
+  $(this).children('img').css("opacity","0.5");
+  $(this).children('img').css("filter","alpha(opacity=50)");
+});
+
+$(".unlikedpic").mouseover(function(){
+  $(this).css("background-color", "#DE4040");
+})
+
+$(".unlikedpic").mouseout(function(){
+  $(this).css("background-color", "rgba(222,64,64,0.5)");
+})
+
+$(".linkOptions").hover(function(){
+  $(this).css("background-color", "transparent");
+  $(this).css("color", "white");
+});
+
+$(".linkToUser").hover(function(){
+  $(this).css("background-color", "transparent");
+  $(this).css("color", "white");
+});
+
+$(".active").mouseout(function(){
+  $(this).children('img').css("opacity","1");
+  $(".title").hide();
+  $(".picLocation").hide();
+  $(".links").hide();
+  $(this).children('img').css("filter","alpha(opacity=100)");
+});
+
+
+
+</script>
+
+<style>
+
+.layoutLike{
+  color: white;
+  position: relative;
+}
+button:focus {outline:0;}
+
+.buttonOptions{
+  border: 1px transparent solid;
+  border-radius: 3px;
+  text-align: center;
+  color: white;
+  width: 50px;
+  position: relative;
+  right: 50px;
+  text-decoration: none;
+  bottom: 7px;
+
+}
+body{
+  background-color: #EDEDED;
+}
+.modal-title{
+  text-align: center;
+}
+
+.linkOptions{
+  color: white;
+  padding-left: 0px;
+}
+
+.seeMore{
+    width: 60px;
+    background-color: rgba(92,184,92,0.5);
+    color: white;
+  }
+.edit{
+    width: 60px;
+    background-color: rgba(240, 173, 78, 0.5);
+    color: white;
+  }
+  .delete{
+    width: 60px;
+    background-color: rgba(201, 48, 44, 0.5);
+    color: white;
+  }
+
+.active {
+    background-color: black;
+    position:relative; 
+  
+}
+h3 {
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+ h6 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.title {
+    position: absolute; 
+    width: 100%;
+    text-align: center;
+    height: 0px; 
+    right: 0; 
+    top: 10%; 
+    bottom: 0; 
+    background: red; 
+    color:white;
+    font-family: 'Slabo 27px', serif;
+}
+.picLocation {
+    position: absolute; 
+    width: 100%;
+    text-align: center;
+    height: 0px; 
+    right: 0; 
+    top: 30%; 
+    bottom: 0; 
+    background: red; 
+    color:white;
+    font-family: 'Slabo 27px', serif;
+}
+.links {
+    position: absolute; 
+    width: 100%;
+    text-align: center;
+    height: 0px; 
+    right: 0; 
+    top:80%; 
+    bottom: 0; 
+    background: red; 
+    color: white;
+    font-family: 'Slabo 27px', serif;
+}
+
+
+#container {
+  width: 1200px;
+  margin: 0 auto;
+  padding-left: 0px;
+}
+
+@media (max-width: 600px) {
+  #myContent {
+    -moz-column-count: 6;
+    -moz-column-gap: 0px;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 0px;
+    column-count: 6;
+    column-gap: 0px;
+    width: 100%;
+  }
+}
+@media (min-width: 600px) and (max-width: 900px){
+  #myContent {
+    -moz-column-count: 6;
+    -moz-column-gap: 0px;
+    -webkit-column-count: 3;
+    -webkit-column-gap: 0px;
+    column-count: 6;
+    column-gap: 0px;
+    width: 100%;
+  }
+}
+
+@media (min-width: 900px) {
+  #myContent {
+    -moz-column-count: 6;
+    -moz-column-gap: 0px;
+    -webkit-column-count: 4;
+    -webkit-column-gap: 0px;
+    column-count: 6;
+    column-gap: 0px;
+    width: 100%;
+  }
+}
+
+#myContent img{
+  display: inline-block;
+  margin-bottom: 0px;
+  width: 100%;
+}
+
+</style>
+

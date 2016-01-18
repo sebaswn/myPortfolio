@@ -1,0 +1,155 @@
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-xl inverse" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h3 class="modal-title" id="myModalLabel">Title</h3>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-8 pictureView">
+                Goodbye
+              </div>
+              <div class="col-md-4 infoView">
+                Hello
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+
+<script>
+ $(".showPic").click(function() {
+     event.preventDefault();
+     var post_id = $(this).data("post");
+
+     console.log(post_id);
+     $.ajax({
+         url: "/getPicInfo/" + post_id + "",
+         success: function(data) {
+             $(".modal-title").empty();
+             $(".modal-title").append("" + data.name +
+                 "");
+             $(".pictureView").empty();
+             $(".pictureView").append(
+                 "<img data-postid="+data.id+" class='imageShow' src='" +
+                 data.picURL +"'>");
+             $(".infoView").empty();
+             $(".infoView").append(
+                 "<b><h4>Description: </b>" + data.description +
+                 "")
+             $(".infoView").append("<b><h4>Location: </b>" +
+                 data.location + "")
+             $(".infoView").append("<div data-x='"+data.coordinateX+"' data-y='"+data.coordinateY+"' id='map'></div>")
+            onLocation(data.coordinateX, data.coordinateY);             
+         },
+     })
+     $(".active").children('#myModal').focus();
+
+
+
+
+
+  var map;  
+function onLocation(positionx, positiony){
+ 
+  // We can't just directly feed the position into our google map
+  // The objects are formatted differently, google maps is looking for
+  // an object with "lat" and "lng" keys.
+    var myPosition = {
+      lat: positiony,
+      lng: positionx
+    };
+ 
+    createMap(myPosition);
+  }
+
+function createMap(position){
+    var mapOptions = {
+    center: position,
+    zoom: 9
+    };
+    map = new google.maps.Map($('#map')[0], mapOptions);
+    google.maps.event.addListenerOnce(map, 'idle', function() {
+       google.maps.event.trigger(map, 'resize');
+       map.setCenter(position);
+    });
+    createMarker(position)
+  }
+
+  
+
+  function createMarker(position) {
+   var marker = new google.maps.Marker({
+     position: position,
+     map: map
+   });
+  }
+
+
+});
+
+</script>
+
+<style>
+button:focus {outline:0;}
+
+
+.prof{
+  padding-right: = 0px;
+  padding-top: 5px;
+  text-align: center;
+}
+
+.map{
+    height: 200px;
+    width: 100%;
+
+  }
+#map{
+  height: 200px;
+  width: 100%;
+  background-color: red;
+}
+
+
+
+.infoView{
+  height: 80vh;
+  overflow: auto;
+  border-bottom: 2px #e5e5e5 solid;
+ 
+}
+
+.pictureView{
+  border-right: 1px #e5e5e5 solid;
+  border-bottom: 1px #e5e5e5 solid;
+}
+
+.modal-content{
+  background-color: #EDEDED;
+  color: black;
+}
+.modal-xl {
+    width: 90%;
+   max-width:1200px;
+   font-family: 'Slabo 27px', serif;
+   max-height: 100px;
+   background-color: black;
+  }
+
+.pictureView{
+  text-align: center;
+  padding-bottom: 10px;
+}
+.imageShow{
+  max-width: 100%;
+  max-height: 80vh;
+}
+
+
+</style>
