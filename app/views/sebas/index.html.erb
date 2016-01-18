@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    
+
+    <title></title>
+</head>
+<body>
+    <%= render "layouts/header" %>
+    <div class="carousel slide" data-ride="carousel" id="myCarousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li class="active" data-slide-to="0" data-target="#myCarousel"></li>
+            <li class="" data-slide-to="1" data-target="#myCarousel"></li>
+            <li class="" data-slide-to="2" data-target="#myCarousel"></li>
+            <li class="" data-slide-to="3" data-target="#myCarousel"></li>
+            
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="http://i.imgur.com/ibTDCne.jpg">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>My Photography Portfolio.</h1>
+                        <p>A collection of all my best pictures, divided into varius albums.</p>
+                        <p><a class="btn btn-lg btn-primary" href="#" role=
+                        "button">Browse Gallery</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="http://i.imgur.com/OUUuCN1.jpg">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>My Web-Development Portfolio.</h1>
+                        <p>Full of fun little websites I've made during my time studying at Ironhack.</p>
+                        <p><a class="btn btn-lg btn-primary" href="#" role=
+                        "button">Check it Out</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="http://i.imgur.com/EJnNNr7.jpg">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>Minimalism though Photoshop</h1>
+                        <p>Though the last couple years I've made a number of different photoshop 'posters' of different movies and tv shows relying on shapes and colors.</p>
+                        <p><a class="btn btn-lg btn-primary" href="#" role=
+                        "button">Browse gallery</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="http://i.imgur.com/CzeGNAX.gif">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>Videos of all Kinds.</h1>
+                        <p>When still images weren't enough, I moved on to videos. Some I made with Adobe After Effects. Others with my phone.</p>
+                        <p><a class="btn btn-lg btn-primary" href="#" role=
+                        "button">Check it Out</a></p>
+                    </div>
+                </div>
+            </div>
+        </div><a class="left carousel-control" data-slide="prev" href=
+        "#myCarousel" role="button"><span aria-hidden="true" class=
+        "glyphicon glyphicon-chevron-left"></span> <span class=
+        "sr-only">Previous</span></a> <a class="right carousel-control"
+        data-slide="next" href="#myCarousel" role="button"><span aria-hidden=
+        "true" class="glyphicon glyphicon-chevron-right"></span> <span class=
+        "sr-only">Next</span></a>
+    </div>
+
+<!--  ###########################################################################
+ --> <br><br>
+ <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-lg-4 circleImage">
+          <img class="img-circle" src="http://i.imgur.com/weHhymv.png" alt="Generic placeholder image" width="140" height="140">
+          <h2>My Source Code</h2>
+          <p>During my time studying at Ironhack, an intensive 9 week course on Web Development in Barcelona, I completed many exercises, all of which I pushed to GitHub just for you.</p>
+          <p><a class="btn btn-default" href="https://github.com/sebaswn" role="button">Go To GitHub »</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4 circleImage">
+          <img class="img-circle" src="http://i.imgur.com/YV4BLJs.jpg" width="140" height="140">
+          <h2>About Me</h2>
+          <p>Everything about me, what I do, my CV, how to contact me, and varius links to my Social Media pages.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4 circleImage">
+          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+
+      <!-- START THE FEATURETTES -->
+
+      <hr class="featurette-divider">
+
+     <div class="jumbotron picLeft runner">
+        <div class="container">
+          <h1>Micro<br>Photography</h1>
+      
+          <p>The world is a big place. <br> Especially if you look at it too close.</p>
+          <p><a class="btn btn-primary btn-lg" href="#" role="button">See Album</a></p>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+     <div class="jumbotron picRight flight">
+        <div class="container">
+          <h1>Timelapse!</h1>
+      
+          <p>Some things are boring.<br>Unless you speed them up.</p>
+          <p><a class="btn btn-primary btn-lg" href="#" role="button">Watch More</a></p>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+
+      <!-- /END THE FEATURETTES -->
+
+
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>All Pictures and Videos Owned by Sebastian William Nee · <a href="#">Contact</a> · <a href="#">Something Else</a></p>
+      </footer>
+
+    </div>
+
+
+
+
+
+<style>
+    .circleImage{
+        text-align: center;
+    }
+
+    .flight{
+      background-image: url("http://i.imgur.com/uxt4I1G.gif");    
+    }
+    .picLeft{
+      text-align: right;   
+    }
+    .runner{
+      background-image: url("http://i.imgur.com/Tl9DglE.jpg"); 
+    }
+    .jumbotron{
+      
+    }
+
+</style>
+
+
+
+    <script src=
+    "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+    </script> 
+    <script src=
+    "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">
+    </script>
+</body>
+</html>
