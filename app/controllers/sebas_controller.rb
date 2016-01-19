@@ -6,5 +6,8 @@ class SebasController < ApplicationController
 		@pictures = Picture.all
 	end
 
+	def videos
+	end
+
 
 end
