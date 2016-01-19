@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
   database: portfolio_production
   username: portfolio
   password: <%= ENV['PORTFOLIO_DATABASE_PASSWORD'] %>
