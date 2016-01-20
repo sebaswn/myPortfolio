@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  resources :pictures
+  	resources :pictures
+    get '/getPicInfo/:id' => 'pictures#getPicInfo'
+
     get "/" => "sebas#index"
     get "/photography" => "sebas#showPictures"
-      get '/getPicInfo/:id' => 'pictures#getPicInfo'
-
     get '/videos' => 'sebas#videos'
+    get '/webDev' => 'sebas#webDev'
 
+    get '/spotify' => 'webdev#spotify'
 end
